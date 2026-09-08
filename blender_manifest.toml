@@ -1,0 +1,17 @@
+schema_version = "1.0.0"
+id = "blendtrace"
+version = "0.1.1"
+name = "BlendTrace"
+tagline = "Readable local timeline of Blender modeling operations"
+maintainer = "BlendTrace contributors"
+type = "add-on"
+tags = ["3D View", "Development"]
+blender_version_min = "4.3.0"
+license = ["SPDX:GPL-3.0-or-later"]
+
+[build]
+paths_exclude_pattern = [
+  "__pycache__/",
+  "/.git/",
+  "/*.zip",
+]
