@@ -1,19 +1,13 @@
-# Security Policy
+# Security
 
-## Supported version
+BlendTrace v0.2.0 follows a minimal-permission, offline-first design.
 
-The current prototype is v0.1.1.
+- No network access is implemented.
+- No third-party Python packages are bundled or required.
+- No subprocess, shell-command, dynamic-code download, or remote execution feature is implemented.
+- No arbitrary file read/write feature is implemented.
+- No credential, clipboard, browser, or global-input access is implemented.
+- The semantic cursor is drawn only inside Blender's 3D View using Blender's drawing APIs.
+- Tracking failures are handled without modifying the user's scene.
 
-## Reporting a security issue
-
-Please open a GitHub issue that describes the behavior without posting real credentials, private files, API keys or other sensitive personal data.
-
-## Publisher checklist
-
-Before publishing a modified release:
-
-1. Search the repository for API keys, tokens, passwords, private URLs and local absolute paths.
-2. Do not commit `.blend` project files unless they are intentionally public examples.
-3. Do not commit environment files, credentials, caches or editor-specific private settings.
-4. Review every new dependency and every new network or file-system permission.
-5. Treat any credential accidentally committed to Git history as exposed and revoke/rotate it; deleting the visible line alone is not sufficient.
+For important Blender projects, normal backup/versioning practices are still recommended because any third-party add-on runs inside Blender's process and software can contain unforeseen defects.

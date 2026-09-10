@@ -1,31 +1,33 @@
 # Privacy
 
-BlendTrace v0.1.1 is designed as an offline-first Blender extension.
+BlendTrace v0.2.0 is designed to be offline and local-only.
 
 ## Data it reads
 
-While recording is active, BlendTrace reads:
+While recording, BlendTrace reads only the Blender runtime information needed for its visible features:
 
-- the active undo-stack step name and index exposed by Blender;
-- the name of the active Blender object.
+- the current undo-stack step name and index;
+- the current active object's name;
+- the current active object's world-space origin so the semantic cursor can be drawn in the 3D View;
+- the current 3D View region/view state needed to project that point onto the screen.
 
-These values are used only to display the local timeline inside the current Blender session.
+## Data it does not read
 
-## Data it does not access or transmit
+BlendTrace v0.2.0 contains no code to read:
 
-This release contains no code for:
+- operating-system mouse coordinates or global input events;
+- clipboard contents;
+- browser data or browser history;
+- account credentials, passwords, tokens, cookies, or SSH keys;
+- arbitrary files or folders on disk;
+- email, contacts, cloud drives, or other applications.
 
-- network connections or HTTP requests;
-- telemetry or analytics;
-- AI or cloud APIs;
-- API keys, tokens, passwords or account credentials;
-- browser history or browser data;
-- clipboard access;
-- arbitrary scanning of files or directories;
-- background uploads.
+## Networking and telemetry
 
-BlendTrace v0.1.1 does not transmit user data.
+BlendTrace v0.2.0 contains no networking code, telemetry, analytics, advertising SDK, AI/API integration, account system, or cloud-storage integration. It does not transmit recorded information.
 
-## Future versions
+The semantic cursor is a Blender viewport overlay. It is not a system cursor recorder.
 
-If a future version introduces optional network or AI features, those features should be documented separately, request only the permissions they need, and remain distinguishable from the offline recorder.
+## Storage
+
+Trace items are kept in Blender runtime state for the current session. This version does not implement export, upload, synchronization, or background persistence.

@@ -1,8 +1,8 @@
 schema_version = "1.0.0"
 id = "blendtrace"
-version = "0.1.1"
+version = "0.2.0"
 name = "BlendTrace"
-tagline = "Readable local timeline of Blender modeling operations"
+tagline = "Offline modeling timeline with a semantic viewport cursor"
 maintainer = "BlendTrace contributors"
 type = "add-on"
 tags = ["3D View", "Development"]
